@@ -83,7 +83,11 @@ jobs:
                si existe, actualízalo con `gh api -X PATCH repos/${{ github.repository }}/issues/comments/<id> -f body=...`;
                si no, créalo con `gh issue comment`.
 
-            Formato del comentario:
+            Formato del comentario: debe estar escrito en Markdown de GitHub (GFM) válido,
+            de modo que GitHub lo renderice correctamente (encabezados, negritas, listas,
+            bloques de código con ``` y lenguaje, código en línea con `backticks`).
+            Al pasarlo a `gh`, usa saltos de línea reales (por ejemplo con un heredoc
+            y `--body-file -`; no puedes crear archivos), no secuencias literales `\n`.
 
             ## 🔍 Diagnóstico automático
             **Resumen:** una o dos frases con el problema o solicitud.
